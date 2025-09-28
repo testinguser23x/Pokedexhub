@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Pokédex Interactiva</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre o número..." class="search-input">
+            </div>
+        </header>
+
+        <div class="filters-container">
+            <div class="filter-group">
+                <label for="typeFilter">Filtrar por tipo:</label>
+                <select id="typeFilter" class="filter-select">
+                    <option value="">Todos</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fuego</option>
+                    <option value="water">Agua</option>
+                    <option value="electric">Eléctrico</option>
+                    <option value="grass">Planta</option>
+                    <option value="ice">Hielo</option>
+                    <option value="fighting">Lucha</option>
+                    <option value="poison">Veneno</option>
+                    <option value="ground">Tierra</option>
+                    <option value="flying">Volador</option>
+                    <option value="psychic">Psíquico</option>
+                    <option value="bug">Bicho</option>
+                    <option value="rock">Roca</option>
+                    <option value="ghost">Fantasma</option>
+                    <option value="dragon">Dragón</option>
+                    <option value="dark">Siniestro</option>
+                    <option value="steel">Acero</option>
+                    <option value="fairy">Hada</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sortBy">Ordenar por:</label>
+                <select id="sortBy" class="filter-select">
+                    <option value="number">Número</option>
+                    <option value="name">Nombre</option>
+                </select>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div id="pokemonList" class="pokemon-grid">
+                <!-- Los Pokémon se cargarán dinámicamente aquí -->
+            </div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Cargando Pokémon...</p>
+            </div>
+            <div id="loadMore" class="load-more">
+                <button id="loadMoreBtn" class="load-more-btn">Cargar más</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para detalles del Pokémon -->
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="pokemonDetails" class="pokemon-details">
+                <!-- Los detalles del Pokémon se cargarán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
